@@ -138,6 +138,8 @@ export async function POST(req: NextRequest, { params }: RouteParams) {
       characters: shotCharacters, sceneName, props: shotProps,
       previousShotLastFramePrompt,
       videoMode, // 'frame' | 'r2v' | 'broll' — 素材模式需要在 videoPrompt 中使用 {@} 语法
+      modules: moduleSelections, // 电影模块选择
+      modulePromptText, // 模块系统生成的提示词文本
     } = body;
 
     const script = getScriptById(id);
@@ -215,6 +217,11 @@ ${previousShotLastFramePrompt ? `
 ${previousShotLastFramePrompt}
 （请注意：当前镜头的首帧应与上一镜头的尾帧在空间、光影上自然衔接）
 ` : ''}
+	${modulePromptText ? `
+	=== 导演指定模块（必须严格遵守，融入首帧/尾帧/videoPrompt 的描述中） ===
+	${modulePromptText}
+	（以上是导演通过电影模块系统指定的运镜、光影、情绪、音乐等视觉语言，必须融入当前镜头的提示词中）
+	` : ''}
 === 关键提醒 ===
 1. 首帧/尾帧是静止画面：所有人物必须闭嘴（用"嘴唇轻抿"等替代"正在说话"）
 2. 必须建立空间锚点：明确场景基准面和关键参照物的位置

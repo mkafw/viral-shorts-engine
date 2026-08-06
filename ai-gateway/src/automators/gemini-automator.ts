@@ -29,13 +29,18 @@ async function launchChromeWithDebugPort() {
         throw new Error('未找到 Chrome 浏览器，请手动启动：chrome --remote-debugging-port=9222');
     }
 
+    // Get proxy from env (default to wispbyte-flow-proxy)
+    const proxyUrl = process.env.CHROME_PROXY || 'http://127.0.0.1:9643';
+    
     console.log(`[Gemini Automator] 正在启动 Chrome: ${chromePath}`);
+    console.log(`[Gemini Automator] Proxy: ${proxyUrl}`);
     
     const chromeProcess = spawn(chromePath, [
         '--remote-debugging-port=9222',
         `--user-data-dir=${tempUserDataDir}`,
         '--no-first-run',
-        '--no-default-browser-check'
+        '--no-default-browser-check',
+        `--proxy-server=${proxyUrl}`,
     ], {
         detached: true,
         stdio: 'ignore'

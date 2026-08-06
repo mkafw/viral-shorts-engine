@@ -1,6 +1,5 @@
 import { Router } from 'express';
-import { generatePromptWithGeminiWeb } from '../automators/gemini-automator.js';
-import { generatePromptWithDoubaoWeb } from '../automators/doubao-automator.js';
+import { smartGenerateText } from '../automators/smart-router.js';
 import { enqueue } from '../middleware/serialQueue.js';
 
 export const textRouter = Router();
@@ -8,16 +7,7 @@ export const textRouter = Router();
 /**
  * POST /api/text/generate
  * 
- * 通过 Gemini Web 自动化生成文本内容。
- * 
- * Body:
- *   - systemPrompt: string (系统提示词)
- *   - userPrompt: string (用户提示词)
- *   - forceJson?: boolean (是否强制 JSON 输出，默认 true)
- *   - provider?: 'gemini' | 'doubao' (使用哪个服务，默认 gemini)
- * 
- * Response:
- *   - { text: string }
+ * 智能路由文本生成：自动探测活跃引擎（Gemini/Doubao）并支持失败回退。
  */
 textRouter.post('/generate', async (req, res) => {
   try {
@@ -28,19 +18,15 @@ textRouter.post('/generate', async (req, res) => {
       return;
     }
 
-    console.log(`\n[Text Route] Received request for provider [${provider || 'gemini'}]. Prompt preview: "${userPrompt.substring(0, 60)}..."`);
+    console.log(`\n[Text Route] 收到生成请求。首选引擎: [${provider || '自动探测'}]. 提示词预览: "${userPrompt.substring(0, 60)}..."`);
 
     const text = await enqueue(() => {
-      if (provider === 'doubao') {
-        return generatePromptWithDoubaoWeb(systemPrompt, userPrompt, forceJson ?? true);
-      } else {
-        return generatePromptWithGeminiWeb(systemPrompt, userPrompt, forceJson ?? true);
-      }
+      return smartGenerateText(systemPrompt, userPrompt, forceJson ?? true, provider);
     });
 
     res.json({ text });
   } catch (err: any) {
-    console.error('[Text Route] Error:', err.message);
+    console.error('[Text Route] 最终生成失败:', err.message);
     res.status(500).json({ error: err.message });
   }
 });

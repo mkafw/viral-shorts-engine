@@ -20,12 +20,47 @@ export async function generateText({ systemPrompt, userPrompt, forceJson = false
 
   const provider = settings.aiProvider || 'gemini';
   const minimaxApiKey = settings.minimaxApiKey || process.env.MINIMAX_API_KEY || '';
+  const deepseekApiKey = settings.deepseekApiKey || process.env.DEEPSEEK_API_KEY || '';
 
   console.log(`\n======================================`);
   console.log(`🚀 [LLM] 开始生成内容... 提供商: ${provider}`);
   console.log(`======================================`);
 
-  if (provider === 'minimax') {
+  if (provider === 'deepseek') {
+    if (!deepseekApiKey) {
+      throw new Error('未配置 DeepSeek API Key，请在系统设置中配置。');
+    }
+
+    const res = await fetch('https://api.deepseek.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${deepseekApiKey}`
+      },
+      body: JSON.stringify({
+        model: 'deepseek-chat',
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userPrompt }
+        ],
+        stream: false,
+        max_tokens: 8192
+      })
+    });
+
+    if (!res.ok) {
+      const errBody = await res.text();
+      let errMsg = errBody;
+      try {
+        const parsedErr = JSON.parse(errBody);
+        errMsg = parsedErr.error?.message || parsedErr.message || errBody;
+      } catch (e) {}
+      throw new Error(`DeepSeek API: ${errMsg}`);
+    }
+
+    const data = await res.json();
+    return data.choices?.[0]?.message?.content || '';
+  } else if (provider === 'minimax') {
     if (!minimaxApiKey) {
       throw new Error('未配置 MiniMax API Key，请在系统设置中配置。');
     }

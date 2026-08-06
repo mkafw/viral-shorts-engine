@@ -34,7 +34,7 @@ export default function ProjectList() {
   const [chromeDataDirFeedback, setChromeDataDirFeedback] = useState('');
   const [updateChecking, setUpdateChecking] = useState(false);
   const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
-  const [globalSettings, setGlobalSettings] = useState({ aiProvider: 'gemini', minimaxApiKey: '', jianyingPath: '', flowUrl: '', imageModel: 'Nano Banana Pro', videoModel: 'veo_3_1_t2v_lite', proxyUrl: '' });
+  const [globalSettings, setGlobalSettings] = useState({ aiProvider: 'gemini', minimaxApiKey: '', deepseekApiKey: '', jianyingPath: '', flowUrl: '', imageModel: 'Nano Banana Pro', videoModel: 'veo_3_1_t2v_lite', proxyUrl: '' });
 
   const electronAPI = typeof window !== 'undefined' && (window as any).electronAPI?.isElectron ? (window as any).electronAPI : null;
 
@@ -58,6 +58,7 @@ export default function ProjectList() {
         setGlobalSettings({
           aiProvider: data.data.aiProvider || 'gemini',
           minimaxApiKey: data.data.minimaxApiKey || '',
+          deepseekApiKey: data.data.deepseekApiKey || '',
           jianyingPath: data.data.jianyingPath || '',
           flowUrl: data.data.flowUrl || '',
           imageModel: data.data.imageModel || 'Nano Banana Pro',
@@ -340,6 +341,7 @@ export default function ProjectList() {
                   <option value="gemini">Gemini (默认)</option>
                   <option value="doubao">豆包 Doubao</option>
                   <option value="minimax">MiniMax (稀宇科技)</option>
+                  <option value="deepseek">DeepSeek</option>
                 </select>
                 {globalSettings.aiProvider === 'minimax' && (
                   <div className="mt-3">
@@ -349,6 +351,17 @@ export default function ProjectList() {
                       value={globalSettings.minimaxApiKey}
                       onChange={e => updateGlobalSetting('minimaxApiKey', e.target.value)}
                       placeholder="请填入您的 MiniMax API Key (如果不填则可能无法调用)"
+                    />
+                  </div>
+                )}
+                {globalSettings.aiProvider === 'deepseek' && (
+                  <div className="mt-3">
+                    <input
+                      type="password"
+                      className="w-full bg-black/60 border border-neutral-700 rounded-lg p-3 text-white font-mono text-sm focus:border-orange-500 focus:outline-none"
+                      value={globalSettings.deepseekApiKey}
+                      onChange={e => updateGlobalSetting('deepseekApiKey', e.target.value)}
+                      placeholder="请填入您的 DeepSeek API Key (如果不填则可能无法调用)"
                     />
                   </div>
                 )}

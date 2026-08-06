@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Pencil, Check } from 'lucide-react';
 import { useProject } from '@/lib/ProjectContext';
 import { useProjectStore } from '@/lib/store/useProjectStore';
@@ -12,6 +12,13 @@ interface Props {
   onClose: () => void;
 }
 
+const IMAGE_MODELS = [
+  { value: 'Nano Banana Pro', label: 'Nano Banana Pro (Gemini 3.0 Pro)' },
+  { value: 'Nano Banana 2', label: 'Nano Banana 2 (Gemini 3.1 Flash)' },
+  { value: 'Imagen 4', label: 'Imagen 4' },
+  { value: 'GLM-Image', label: 'GLM-Image (智谱免费生图)' },
+];
+
 export default function SettingsModal({ open, onClose }: Props) {
   const { projectId } = useProject();
   const flowUrl = useProjectStore(s => s.flowUrl);
@@ -22,9 +29,31 @@ export default function SettingsModal({ open, onClose }: Props) {
   const setJianyingPath = useProjectStore(s => s.setJianyingPath);
   const aiProvider = useProjectStore(s => s.aiProvider);
   const setAiProvider = useProjectStore(s => s.setAiProvider);
+  const [imageModel, setImageModel] = useState('Nano Banana Pro');
   const [isRenaming, setIsRenaming] = useState(false);
   const [newName, setNewName] = useState(projectId);
   const [renaming, setRenaming] = useState(false);
+
+  // 加载当前 imageModel 配置
+  useEffect(() => {
+    if (!open) return;
+    fetch('/api/system-state').then(r => r.json()).then(data => {
+      if (data.success && data.data?.imageModel) {
+        setImageModel(data.data.imageModel);
+      }
+    }).catch(() => {});
+  }, [open]);
+
+  // 保存 imageModel
+  const handleImageModelChange = async (val: string) => {
+    setImageModel(val);
+    await fetch('/api/system-state', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ imageModel: val }),
+    });
+    toast.success(`生图模型已切换为: ${IMAGE_MODELS.find(m => m.value === val)?.label || val}`);
+  };
 
   if (!open) return null;
 
@@ -124,8 +153,29 @@ export default function SettingsModal({ open, onClose }: Props) {
           </div>
         </div>
 
-        <div className="mt-8 flex justify-end">
-          <button onClick={onClose} className="px-6 py-2.5 bg-neutral-800 hover:bg-neutral-700 text-white rounded-xl transition-colors font-bold">
+        <div className="h-px bg-neutral-800 w-full" />
+
+        {/* Image Model */}
+        <div>
+          <label className="text-sm font-bold text-neutral-300 block mb-2">🖼️ 生图模型 (Image Model)</label>
+          <select
+            className="w-full bg-black/60 border border-neutral-700 rounded-lg p-3 text-white text-sm focus:border-emerald-500 focus:outline-none cursor-pointer"
+            value={imageModel}
+            onChange={e => handleImageModelChange(e.target.value)}
+          >
+            {IMAGE_MODELS.map(m => (
+              <option key={m.value} value={m.value}>{m.label}</option>
+            ))}
+          </select>
+          <p className="text-xs text-neutral-600 mt-1.5">
+            {imageModel === 'GLM-Image'
+              ? '使用 智谱AI GLM-Image 免费生图，需 Chrome 打开 image.z.ai 并登录'
+              : '使用 Google Flow API 生图，需 Chrome 打开 labs.google/fx 中的 Flow 项目'}
+          </p>
+        </div>
+
+      <div className="mt-8 flex justify-end">
+        <button onClick={onClose} className="px-6 py-2.5 bg-neutral-800 hover:bg-neutral-700 text-white rounded-xl transition-colors font-bold">
             完成
           </button>
         </div>

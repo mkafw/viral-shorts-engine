@@ -9,6 +9,8 @@ import { resolveFlowUrl } from '@/lib/detectFlowUrl';
 import fs from 'fs';
 import path from 'path';
 import { flowGenerateImages, flowSubmitVideoTask, flowPollVideoStatus, flowUploadImage, getAuthContext, googleFetch } from '@/lib/utils/flowApi';
+import { GlmImageApi } from '@/lib/utils/glmImageApi';
+import { getGlmImageSession, getGlmImageSessionFromStore } from '@/lib/utils/glmImageAuth';
 
 export const maxDuration = 300; // Vercel timeout (300s = 5m), fine for local
 export const dynamic = 'force-dynamic';
@@ -247,6 +249,36 @@ export async function POST(req: Request) {
         const globalModel = state?.value;
         const finalModel = globalModel || model || "Nano Banana Pro";
 
+        // GLM-Image 分支：走 image.z.ai 免费生图
+        if (finalModel === "GLM-Image") {
+          // 先尝试从数据库读取缓存的 session
+          let sessionCookie = await getGlmImageSessionFromStore();
+          if (!sessionCookie) {
+            // 没有缓存，从浏览器 CDP 实时提取
+            const portMatch = flowUrl.match(/port=(\d+)/);
+            const cdpPort = portMatch ? portMatch[1] : '9222';
+            sessionCookie = await getGlmImageSession(Number(cdpPort));
+          }
+
+          const glmApi = new GlmImageApi(sessionCookie);
+
+          // 映射比例
+          const ratioMap: Record<string, string> = {
+            'IMAGE_ASPECT_RATIO_LANDSCAPE': '16:9',
+            'IMAGE_ASPECT_RATIO_PORTRAIT': '9:16',
+            'IMAGE_ASPECT_RATIO_SQUARE': '1:1',
+          };
+          const ratio = ratioMap[reqAspectRatio] || '9:16';
+
+          const result = await glmApi.generate({
+            prompt,
+            ratio,
+            resolution: '1K',
+            rm_label_watermark: true,
+          });
+
+          finalFifeUrl = result.image_url;
+        } else {
         let resolvedModelName = "NARWHAL"; // 默认 3.1 Flash
         if (finalModel === "Nano Banana Pro") resolvedModelName = "GEM_PIX_2"; // Gemini 3.0 Pro
         else if (finalModel === "Nano Banana 2") resolvedModelName = "NARWHAL"; // Gemini 3.1 Flash (原 GEM_PIX 报 500，切换为更稳的 3.1)
@@ -266,6 +298,7 @@ export async function POST(req: Request) {
         const fifeUrl = imageRes.media?.[0]?.image?.generatedImage?.fifeUrl;
         if (!fifeUrl) throw new Error('图片生成失败，未返回 CDN 地址');
         finalFifeUrl = fifeUrl;
+        }
     }
 
     // DOWNLOAD TO LOCAL

@@ -7,6 +7,9 @@ import { useStudioStore } from '@/lib/studio/store/useStudioStore';
 import type { FsAsset } from '@/lib/studio/types';
 import { useStudioInboxPoller } from '@/components/studio/assets/useStudioInboxPoller';
 import { toast } from '@/lib/toast';
+import ModuleSelector from '@/components/studio/ModuleSelector';
+import { generatePrompt } from '@/lib/studio/modules/engine';
+import type { ModuleSelections } from '@/lib/studio/modules/engine';
 
 type FrameMode = 'first_only' | 'first_and_last' | 'r2v';
 
@@ -31,6 +34,18 @@ export default function StoryboardLayoutPage() {
   // 道具覆盖层: { shotId: string[] } — 用户可增删
   const [shotPropOverrides, setShotPropOverrides] = useState<Record<string, string[]>>({});
   const [showPropPicker, setShowPropPicker] = useState(false);
+
+  // 电影模块选择器状态
+  const [moduleSelections, setModuleSelections] = useState<ModuleSelections>({});
+  const [moduleTemplateId, setModuleTemplateId] = useState('default');
+
+  // 由模块选择器生成的提示词文本（用于预览）
+  const modulePromptText = useMemo(() => {
+    const hasSelection = Object.values(moduleSelections).some(v => v !== undefined && (Array.isArray(v) ? v.length > 0 : true));
+    if (!hasSelection) return '';
+    const result = generatePrompt(moduleSelections);
+    return result.full_prompt;
+  }, [moduleSelections]);
 
   useEffect(() => {
     if (scriptId) selectScript(scriptId);
@@ -237,6 +252,9 @@ export default function StoryboardLayoutPage() {
             if (!prev) return undefined;
             return editablePrompts[prev.id]?.last || prev.lastFramePrompt || undefined;
           })(),
+          // 电影模块数据
+          modules: moduleSelections,
+          modulePromptText: modulePromptText || undefined,
         }),
       });
       if (!res.ok) throw new Error(await res.text());
@@ -597,6 +615,15 @@ export default function StoryboardLayoutPage() {
                   )}
                 </div>
               </div>
+
+              {/* 电影模块选择器 */}
+              <ModuleSelector
+                selections={moduleSelections}
+                onChange={setModuleSelections}
+                templateId={moduleTemplateId}
+                onTemplateChange={setModuleTemplateId}
+                promptText={modulePromptText}
+              />
 
               {/* AI 生成提示词 + 帧模式 */}
               <div className="flex gap-2">

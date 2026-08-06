@@ -9,7 +9,7 @@ setlocal
 :: =====================================================================
 
 :: 默认使用您当前活跃的 Codespace ID
-set CODESPACE_ID=cautious-space-adventure-qwjj6x6w7442x66
+set CODESPACE_ID=warp-proxy-5gx695gxjrpjc4595
 if not "%~1"=="" set CODESPACE_ID=%~1
 set LOCAL_PORT=1081
 set REMOTE_PORT=40000

@@ -1,0 +1,3 @@
+[submodule "vendor/ai-shortfilm-prompts"]
+	path = vendor/ai-shortfilm-prompts
+	url = https://github.com/jnMetaCode/ai-shortfilm-prompts.git
