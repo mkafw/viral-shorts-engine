@@ -37,7 +37,82 @@ export async function POST(req: Request) {
              return "";
         };
 
-        // Resolve JianYing Draft Path
+        // Resolve JianYing Draft Path or CutCLI Exporter
+        const cutcliBin = '/home/qiyu/.local/bin/cutcli';
+        const hasCutCli = fs.existsSync(cutcliBin);
+
+        if (hasCutCli) {
+            // 使用现代 cutcli 命令行工具无缝导出
+            const { execSync } = await import('child_process');
+            const draftName = `${projectId}_${Date.now()}`;
+            const createOut = execSync(`${cutcliBin} draft create --width 1080 --height 1920 --name "${draftName}"`, { encoding: 'utf-8' });
+            let draftId = draftName;
+            try {
+                const parsed = JSON.parse(createOut);
+                if (parsed.draftId) draftId = parsed.draftId;
+            } catch {}
+
+            let currentUs = 0;
+            const captionsList = [];
+            const videoList = [];
+            const audioList = [];
+
+            for (let i = 0; i < state.scriptLines.length; i++) {
+                const dialogue = (state.scriptLines[i].dialogue || "").replace(/\[.*?\]\s*/g, '').trim();
+                const videoUrl = state.sceneVideos[i] || state.sceneImages[i] || state.sceneStartImages[i];
+                const audioUrl = state.sceneAudio[i];
+                const videoPath = getLocalPath(videoUrl);
+                const audioPath = getLocalPath(audioUrl);
+
+                const trimStart = state.sceneVideoTrimStart?.[i] ?? 0;
+                let fallbackDur = state.sceneDurations[i] || 8.0;
+                const trimEnd = state.sceneVideoTrimEnd?.[i] ?? fallbackDur;
+                const duration = Math.max(0.1, trimEnd - trimStart);
+                const durUs = Math.round(duration * 1000000);
+                const audioDelayUs = Math.round((state.sceneAudioDelays?.[i] || 0) * 1000000);
+
+                if (videoPath && fs.existsSync(videoPath)) {
+                    videoList.push({
+                        path: videoPath,
+                        start: currentUs,
+                        duration: durUs
+                    });
+                }
+
+                if (audioPath && fs.existsSync(audioPath)) {
+                    audioList.push({
+                        path: audioPath,
+                        start: currentUs + audioDelayUs,
+                        duration: Math.max(100000, durUs - audioDelayUs)
+                    });
+                }
+
+                if (dialogue) {
+                    captionsList.push({
+                        text: dialogue,
+                        start: currentUs + audioDelayUs,
+                        end: currentUs + durUs
+                    });
+                }
+
+                currentUs += durUs;
+            }
+
+            // 写入字幕
+            if (captionsList.length > 0) {
+                const tempCaptionsPath = path.join(projectDir, 'temp_captions.json');
+                fs.writeFileSync(tempCaptionsPath, JSON.stringify(captionsList), 'utf-8');
+                try {
+                    execSync(`${cutcliBin} captions add "${draftId}" --captions @${tempCaptionsPath} --font-size 9 --bold --text-color "#FFFFFF" --border-color "#000000" --border-width 2`);
+                } catch (e: any) {
+                    console.error('[CutCLI] 添加字幕异常:', e.message);
+                }
+            }
+
+            const draftDir = path.join(process.env.HOME || '', '.cut/drafts', draftId);
+            return NextResponse.json({ success: true, file: draftDir, draftId });
+        }
+
         let jyBasePath = state.jianyingPath?.trim();
         if (!jyBasePath) {
             if (process.platform === 'win32') {
@@ -45,7 +120,7 @@ export async function POST(req: Request) {
             } else if (process.platform === 'darwin') {
                 jyBasePath = path.join(process.env.HOME || '', 'Movies/JianyingPro/User Data/Projects/com.lveditor.draft');
             } else {
-                throw new Error("暂不支持在该系统上自动查找剪映草稿目录，请在设置中手动配置。");
+                jyBasePath = path.join(process.env.HOME || '', '.cut/drafts');
             }
         }
 

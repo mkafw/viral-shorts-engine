@@ -1,0 +1,90 @@
+---
+title: 流水线总图 · Pipeline Overview
+description: 从剧本到AI视频的完整链路：创作系统 → 5-stage prompt → AI视频生成。
+---
+
+# 流水线总图
+
+> 从剧本到AI视频的完整工业化链路。
+
+---
+
+## 整体架构
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                        剧本 · Script                             │
+│  (灵魂积碳 / 智人磨粒克星 / 任何故事)                             │
+└────────────────────────┬─────────────────────────────────────────┘
+                         │
+                         ▼
+┌──────────────────────────────────────────────────────────────────┐
+│              创作系统 · Creation System (本手册)                   │
+│                                                                  │
+│  [25线骨架] → [C/S/P/K编号] → [白描工具包]                       │
+│      剧情结构       资产一致性      文字→画面指令                   │
+└────────────────────────┬─────────────────────────────────────────┘
+                         │
+                         ▼
+┌──────────────────────────────────────────────────────────────────┐
+│         AI短片Prompt方法论 · ai-shortfilm-prompts                 │
+│  vendor/ai-shortfilm-prompts/  (jnMetaCode/Mx-Shell)              │
+│                                                                  │
+│  [5-Stage结构] → [7条硬规则] → [模型兼容速查]                    │
+│     核心主题       IMAX+缺陷        Seedance/Sora/Kling           │
+│     角色场景       空结尾          Veo/Hailuo/Wan                 │
+│     氛围画质       breathing                                     │
+│     相机规则                                                     │
+│     分镜板                                                       │
+└────────────────────────┬─────────────────────────────────────────┘
+                         │
+                         ▼
+┌──────────────────────────────────────────────────────────────────┐
+│              AI视频生成 · Viral Shorts Engine                     │
+│                                                                  │
+│  AI Gateway (4100) → Chrome CDP (9222) → Seedance/Kling/Veo     │
+│                                          ↓                       │
+│                                     CapCut草稿导出               │
+│                                          ↓                       │
+│                                     成片                          │
+└──────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 各层职责
+
+| 层 | 做什么 | 在哪 |
+|----|--------|------|
+| **剧本** | 故事本身（灵魂积碳12集） | 本手册各集MDX |
+| **创作系统** | 剧本结构化：25线骨架定剧情、C/S/P/K锁一致性、白描转指令 | `/docs/creation-system` |
+| **Prompt方法论** | 把白描指令翻译成AI视频模型能理解的5-stage prompt | `vendor/ai-shortfilm-prompts/` |
+| **VSE流水线** | 调用AI模型生成视频、导出剪映草稿 | 本工程代码 |
+
+---
+
+## 实操流程（7步）
+
+```
+Step 1: 一句话核心          谁+处境+必须做什么+否则会怎样
+Step 2: 结构化剧本          按[核心事件+关键场景+伏笔+基调]格式
+Step 3: 清洗+白描化         华丽辞藻清洗器 → 白描转换器
+Step 4: 视觉一致性锚点      主角代码/场景代码/道具代码 (C/S/P/K)
+Step 5: 静态分镜提示词      AI绘图提示词万能公式：主体+动作+环境+光线+画幅
+Step 6: 动态运镜补全        加上镜头运动+物理轨迹（5-stage Stage 4+5）
+Step 7: 素材包输出          白描剧本 + 静态提示词 + 动态提示词 + 声音建议
+```
+
+---
+
+## 相关链接
+
+| 资源 | 路径 |
+|------|------|
+| 5-stage 完整方法论 | `vendor/ai-shortfilm-prompts/methodology.md` |
+| 一页速查 | `vendor/ai-shortfilm-prompts/cheatsheet.md` |
+| 模板库（15s变身/多镜头叙事/氛围预制） | `vendor/ai-shortfilm-prompts/templates/` |
+| 失败→修复对照库 | `vendor/ai-shortfilm-prompts/cases.md` |
+| Claude Code Skill（原版） | `vendor/ai-shortfilm-prompts/skills/shortfilm-prompt/SKILL.md` |
+| 创作系统 | `/docs/creation-system` |
+| Hermes Skill（CLI版） | `~/.hermes/skills/creative/ai-shortfilm-prompts/SKILL.md` |
