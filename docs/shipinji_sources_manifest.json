@@ -1,0 +1,887 @@
+{
+  "notebook_id": "116b3583-2f70-4aac-a039-561114a88682",
+  "notebook_title": "视频姬",
+  "sources": [
+    {
+      "index": 1,
+      "id": "49ea35dc-a53d-4f42-ae1b-704287c557c4",
+      "title": "03-白膜.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:42:29"
+    },
+    {
+      "index": 2,
+      "id": "248ad789-74bc-4f3c-bb26-199563fe9117",
+      "title": "04-调度图.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:42:57"
+    },
+    {
+      "index": 3,
+      "id": "8b574bf5-139d-47cb-9718-df85c59d092f",
+      "title": "05-豆志刚的运境.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T19:56:03"
+    },
+    {
+      "index": 4,
+      "id": "d564b833-43a8-4410-93b6-12155939f83d",
+      "title": "06-多合一.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:42:29"
+    },
+    {
+      "index": 5,
+      "id": "142143b6-56a4-4faf-afdf-b2fd4dff9f9e",
+      "title": "07-多视角穿搭.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:42:57"
+    },
+    {
+      "index": 6,
+      "id": "33ebc51a-e42e-4bae-8add-97d1585df04f",
+      "title": "07-多视角穿搭.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:11:36"
+    },
+    {
+      "index": 7,
+      "id": "dbd47536-b50f-4631-a3c2-76f26c3d6e35",
+      "title": "09-故事板1.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:42:07"
+    },
+    {
+      "index": 8,
+      "id": "1133f6f4-75d4-4056-85e6-7ba18f0b8a1f",
+      "title": "10-故事板3.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:37:23"
+    },
+    {
+      "index": 9,
+      "id": "df72f811-b3e6-4d98-b266-4a5692a554a1",
+      "title": "100-示例-蜜雪冰城AI转场.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:09:38"
+    },
+    {
+      "index": 10,
+      "id": "57e28fb8-0256-4964-b74f-1a1ac3d82651",
+      "title": "101-提示词-九宫格新玩法.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 11,
+      "id": "98c04c0a-3956-4405-9729-40028ef6f9d4",
+      "title": "101-提示词-九宫格新玩法.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:09:38"
+    },
+    {
+      "index": 12,
+      "id": "42fa8898-9d90-4228-be15-85a8dc557469",
+      "title": "103-模型-Seedance2.0模型更新.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 13,
+      "id": "beabcbab-a79e-40e0-abfb-2468a32d9dab",
+      "title": "108-故事板-参考图变灰模.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 14,
+      "id": "64147bf5-1de3-4c0c-8d31-7d91ea4e1f92",
+      "title": "109-示例-AI万能开场.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 15,
+      "id": "48a187ae-6638-4ede-ab73-7aed322c61cd",
+      "title": "11-故事板工具.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:38:44"
+    },
+    {
+      "index": 16,
+      "id": "578e0498-e613-4503-9565-25b12c694ce2",
+      "title": "110-其他-刺猬星球平台.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:09:38"
+    },
+    {
+      "index": 17,
+      "id": "2f652ba5-f270-40df-8cf1-48380de48251",
+      "title": "114-光影-空镜提升质感.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:11:36"
+    },
+    {
+      "index": 18,
+      "id": "2d1b8a2c-d558-4c02-9e4d-e94db7e87d27",
+      "title": "115-配音-控制角色音色语速.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 19,
+      "id": "d807a21f-da52-40e5-b067-a62f50d36c26",
+      "title": "117-角色-控制角色站位.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 20,
+      "id": "19e4d4dd-622d-4676-9330-b87eb2d70682",
+      "title": "118-光影-减法审美更高级.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:09:38"
+    },
+    {
+      "index": 21,
+      "id": "2c250a90-9e9d-417c-ba31-70a41efb7225",
+      "title": "119-光影-镜头语言更真实.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:09:38"
+    },
+    {
+      "index": 22,
+      "id": "3ba5a99f-3719-41b6-b043-6896dbfd5b43",
+      "title": "119-光影-镜头语言更真实.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 23,
+      "id": "7f58080d-4843-4b9e-a81b-f6fae28e389b",
+      "title": "12-故事板铁三角.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:38:44"
+    },
+    {
+      "index": 24,
+      "id": "7544e936-63da-4db0-bb05-bd0d1303b383",
+      "title": "120-角色-精准控制微表情.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:09:38"
+    },
+    {
+      "index": 25,
+      "id": "be92bb0b-3164-4a1c-b709-b3324793072d",
+      "title": "120-角色-精准控制微表情.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 26,
+      "id": "5fa8af74-3e8f-4d61-86ca-1d090dd8cf68",
+      "title": "121-角色-鲁棒性破坏.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 27,
+      "id": "74605385-4865-4aeb-9732-3e4eb9af3cec",
+      "title": "122-光影-提示词控制光线.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 28,
+      "id": "94834738-aed1-44e6-9b75-44983a43de64",
+      "title": "123-提示词-3方法提升提示词能力.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 29,
+      "id": "111fdb79-5c15-4e3f-be15-540946020a0d",
+      "title": "124-提示词-文化碰撞品牌质感.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 30,
+      "id": "1ec330e7-2057-44bc-a86e-c376c60a0f24",
+      "title": "124-提示词-文化碰撞品牌质感.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:09:38"
+    },
+    {
+      "index": 31,
+      "id": "763624ba-f60e-4eb6-a3b4-a70536fe57ed",
+      "title": "125-角色-时间词带出情绪.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 32,
+      "id": "0c398eff-af63-47d3-b4ac-d6073cf3436e",
+      "title": "126-提示词-反推视频提示词B.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 33,
+      "id": "1817cdb6-ac23-487d-b7bd-5528841f5db5",
+      "title": "127-光影-AI后期调色.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 34,
+      "id": "2edf78ae-71b6-4046-86f0-de00b8410270",
+      "title": "14-黑红风格极简.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:36:01"
+    },
+    {
+      "index": 35,
+      "id": "b673c643-45ee-41d8-bafa-5dc7309109b0",
+      "title": "15-换装.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:37:23"
+    },
+    {
+      "index": 36,
+      "id": "648a4a0d-5bbc-4ed1-8176-091dd77d9e03",
+      "title": "16-九宫格1.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:35:09"
+    },
+    {
+      "index": 37,
+      "id": "9675a10b-3631-4203-8704-70892f2da527",
+      "title": "17-九宫格.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:37:23"
+    },
+    {
+      "index": 38,
+      "id": "359492c7-b139-459f-8d53-3b6d8414df78",
+      "title": "18-拉远塑料画面.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:06:44"
+    },
+    {
+      "index": 39,
+      "id": "e3e23a9e-7e14-4cb8-9e30-9638ab708cb4",
+      "title": "20-七种表情控制.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:08:03"
+    },
+    {
+      "index": 40,
+      "id": "cf53cfdc-26bb-49b5-b587-50b6324c8a9e",
+      "title": "22-色卡.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:08:27"
+    },
+    {
+      "index": 41,
+      "id": "2dc2f13d-f4ec-4fad-b5ca-a2ee7a6f551d",
+      "title": "25-手撕风景.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:37:23"
+    },
+    {
+      "index": 42,
+      "id": "3c67390a-17a2-45ca-a720-7c1776d9bbcc",
+      "title": "26-水墨风格.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:41:23"
+    },
+    {
+      "index": 43,
+      "id": "3b1a2e13-3cac-44b2-98b5-2db44fba99fb",
+      "title": "27-四维发音.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:09:05"
+    },
+    {
+      "index": 44,
+      "id": "198172fe-465c-4929-bc1c-1856f6ca26de",
+      "title": "29-图片去除噪点.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:42:29"
+    },
+    {
+      "index": 45,
+      "id": "929ae289-346c-488c-aeed-d3b11471d315",
+      "title": "30-微表情正.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:42:29"
+    },
+    {
+      "index": 46,
+      "id": "1c0655b5-b2db-4bf5-aaa4-ddfd9e428e88",
+      "title": "31-微表情.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:42:29"
+    },
+    {
+      "index": 47,
+      "id": "6ec07e91-df80-4d57-949f-b210454c8a73",
+      "title": "32-五种运境.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:42:29"
+    },
+    {
+      "index": 48,
+      "id": "804286c8-f259-4c34-8ae4-db76e39e7387",
+      "title": "33-夕阳.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:02:23"
+    },
+    {
+      "index": 49,
+      "id": "71156d5f-0866-4fc3-a0ff-635e0e597424",
+      "title": "35-新场景.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:34:05"
+    },
+    {
+      "index": 50,
+      "id": "db0056df-b94f-459b-82c8-adb547244784",
+      "title": "36-星座特效.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:37:23"
+    },
+    {
+      "index": 51,
+      "id": "b53018cd-c5d7-43f7-ac46-30d3f517992b",
+      "title": "37-运境.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:02:59"
+    },
+    {
+      "index": 52,
+      "id": "570ff4e5-dfe2-41e1-86bb-82b722325ba2",
+      "title": "38-真实感.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:11:36"
+    },
+    {
+      "index": 53,
+      "id": "42e6b444-a345-4787-b0f1-6ad49e1c2dd3",
+      "title": "39-转场.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:03:16"
+    },
+    {
+      "index": 54,
+      "id": "ab2c9b70-686a-453b-b5d0-3040ac21014e",
+      "title": "42-A9ZQi44jV8##1.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:04:15"
+    },
+    {
+      "index": 55,
+      "id": "38559a61-5d7b-4b0a-86b1-585a35201d15",
+      "title": "44-Aeek6Ad4qI##1.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:41:04"
+    },
+    {
+      "index": 56,
+      "id": "ca2ab5ee-cd88-4c61-b44f-58a128e09379",
+      "title": "45-AIH46uwSmd##1.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:04:25"
+    },
+    {
+      "index": 57,
+      "id": "a13cd4f6-c1ed-4198-96f6-ce57a2f2a8c7",
+      "title": "46-AjKCTfBQWt##1.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:11:53"
+    },
+    {
+      "index": 58,
+      "id": "021e811c-2b65-438f-b88e-8bed6e485eca",
+      "title": "47-AKWdGrmnaf##1.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:04:29"
+    },
+    {
+      "index": 59,
+      "id": "3c53e707-01ca-4f8a-8b4d-a4e38c26615b",
+      "title": "49-AlZGDl2RjB##1.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:04:46"
+    },
+    {
+      "index": 60,
+      "id": "6fe344ea-3551-47a2-80ce-ca96ff9d3f20",
+      "title": "50-AnGzW0kU82##1.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:05:02"
+    },
+    {
+      "index": 61,
+      "id": "570279fa-f0b0-44d1-b4e2-c79854d61413",
+      "title": "51-AU1G1DhkC5##1.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:05:19"
+    },
+    {
+      "index": 62,
+      "id": "f5d35313-1cca-4403-bcf3-272a84bfe3b0",
+      "title": "52-AYjQYClAy5##1.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:05:27"
+    },
+    {
+      "index": 63,
+      "id": "981b0557-c6e8-4efd-9d2f-affbe1a8efbd",
+      "title": "53-AzAJ0dfX4I##1.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:05:39"
+    },
+    {
+      "index": 64,
+      "id": "f63678fc-be2e-49cd-bfd6-8e0e087ed994",
+      "title": "54-baofa.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:35:53"
+    },
+    {
+      "index": 65,
+      "id": "fa2c45c5-a74d-41cd-afb7-59ef3d9d9a0e",
+      "title": "57-seedance.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:34:55"
+    },
+    {
+      "index": 66,
+      "id": "50e15fed-6d56-4989-a753-fb43b7b24b4e",
+      "title": "58-seedane.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:35:09"
+    },
+    {
+      "index": 67,
+      "id": "50bb2ac4-429e-4841-9f50-551bfae9fc3b",
+      "title": "59-SESSIOND\\.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T18:35:09"
+    },
+    {
+      "index": 68,
+      "id": "4e4fe5b6-cfc1-4a5c-860d-5a2cd361c418",
+      "title": "60-vlog.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T20:06:16"
+    },
+    {
+      "index": 69,
+      "id": "b903d24d-d394-4541-8bd8-1c0f3076aade",
+      "title": "61-weibiaoqi.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-02T19:58:00"
+    },
+    {
+      "index": 70,
+      "id": "cb071753-d160-4c09-a280-a06b37895596",
+      "title": "64-配音-四维配音进阶SKILL.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:11:36"
+    },
+    {
+      "index": 71,
+      "id": "8a617cc9-74f5-43a6-9e95-b535a08db33d",
+      "title": "65-运镜-八大运镜技巧.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:11:36"
+    },
+    {
+      "index": 72,
+      "id": "ac16f0d4-5006-4447-a7fd-d50a90dcc83c",
+      "title": "66-模型-Seedance2.5变强三点.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 73,
+      "id": "f10c0fa9-248c-444d-b2b5-48696802b388",
+      "title": "72-配音-AI配音全套技巧收尾.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 74,
+      "id": "87126d39-e90b-4f1a-b00d-f2f90a7c067c",
+      "title": "73-配音-配音进阶技巧.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 75,
+      "id": "bf3f03f2-0bb5-4691-87f5-685b7629efaa",
+      "title": "76-光影-景别焦段告别塑料感.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 76,
+      "id": "7190a214-439c-4944-8bfd-144b12075552",
+      "title": "77-故事板-固定场景神器零抽卡.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:09:38"
+    },
+    {
+      "index": 77,
+      "id": "78928e5a-cf3a-4454-8721-b91c7dd8a890",
+      "title": "78-运镜-6个电影运镜.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 78,
+      "id": "b95ae003-cdd0-41b7-9f27-b19dccb2f0ef",
+      "title": "79-运镜-运镜质感翻倍.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:11:36"
+    },
+    {
+      "index": 79,
+      "id": "71a2262b-e807-4c0f-9a5c-85cbcbfef4c0",
+      "title": "81-提示词-AI反写提示词保姆级.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 80,
+      "id": "74b23544-5329-41aa-a339-5284454dbed6",
+      "title": "84-光影-写光不写空气-尘雾.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 81,
+      "id": "323c2ea4-6fbe-4458-ba2c-c58721a9d61d",
+      "title": "85-角色-避免角色动作崩坏.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 82,
+      "id": "7fe2bb22-1e1d-4021-980f-6ee78938e163",
+      "title": "91-角色-两招去掉AI大众脸.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 83,
+      "id": "81cbfb9e-ad95-4ee7-b31c-266f3feba2a7",
+      "title": "93-提示词-邪修一招电影质感.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:11:36"
+    },
+    {
+      "index": 84,
+      "id": "3023f960-3f4c-49d3-b4b9-a587bdad5a20",
+      "title": "94-故事板-导演俯视调度图.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:11:36"
+    },
+    {
+      "index": 85,
+      "id": "fa90cc44-1b0d-430b-980c-3545a84b4db6",
+      "title": "98-故事板-角色板加故事板.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:10:06"
+    },
+    {
+      "index": 86,
+      "id": "c748d399-f238-483f-a670-258a944d6e55",
+      "title": "99-示例-复刻电影ENEMY.mp4",
+      "type": "media",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-09T23:11:36"
+    },
+    {
+      "index": 87,
+      "id": "250b0143-b2aa-49b8-acc6-637ec3d13976",
+      "title": "修复AI剧本混乱的对策",
+      "type": "unknown",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-10-02T12:49:58"
+    },
+    {
+      "index": 88,
+      "id": "0d2b6b05-9937-4cf1-9110-11dc169302b9",
+      "title": "视频批量转文字稿的必要性",
+      "type": "unknown",
+      "url": null,
+      "status": "ready",
+      "status_id": 2,
+      "created_at": "2026-09-24T20:32:22"
+    }
+  ],
+  "count": 88
+}
