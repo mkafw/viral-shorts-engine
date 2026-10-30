@@ -1,0 +1,45 @@
+shot_id: K07
+purpose: character discovers the glowing fragment
+
+prompt_layers:
+  GLOBAL:
+    style: cinematic realistic sci-fi
+    character_lock: C01-0704
+    palette: cold industrial gray with controlled green anomaly
+  SCENE:
+    location: abandoned processing tunnel
+    atmosphere: dust, oil haze, weak overhead practical lights
+  CAMERA:
+    position: three-quarter rear
+    framing: medium shot
+    movement: slow observational push-in
+    attention: follows the character's head turn toward the fragment
+  BLOCKING:
+    character: enters from frame left
+    fragment: remains on floor ahead-right
+    movement: character stops two steps before fragment
+  ACTION:
+    - walks forward
+    - stops
+    - turns head
+    - leans slightly toward fragment
+  GAZE:
+    initial: forward
+    change: locks onto fragment after head turn
+  PERFORMANCE:
+    face: restrained alertness
+    body: movement stops before gaze settles
+    breath: none; fan speed changes subtly
+  VOICE_SOUND:
+    ambience: low industrial hum
+    action_sound: foot contact on metal floor
+    anomaly_sound: faint electrical resonance after gaze locks
+  MICRO:
+    - tiny eye aperture adjustment
+    - dust shifts near foot
+    - green reflection appears on cheek plating
+
+continuity:
+  camera_must_see_discovery: true
+  fragment_must_not_teleport: true
+  robot_no_breathing: true

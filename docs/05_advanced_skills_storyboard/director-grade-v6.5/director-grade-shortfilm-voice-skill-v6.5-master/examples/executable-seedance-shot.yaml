@@ -1,0 +1,45 @@
+shot_id: S08
+primary_subject: C01
+prompt_layers:
+  GLOBAL:
+    visual_style: realistic cinematic science-fiction
+    continuity_lock: C01 appearance, costume, palette
+  SCENE:
+    location: abandoned industrial corridor
+    time: pre-dawn
+    atmosphere: cold haze, wet metal
+  CAMERA:
+    start: three-quarter rear, chest height
+    target: C01
+    path: slow forward tracking with slight lateral arc
+    speed_profile: slow, then brief acceleration on discovery, then hold
+    final_composition: medium close-up
+  BLOCKING:
+    C01: enters frame left, crosses toward center, stops
+    P01: fixed on floor ahead-right
+  ACTION:
+    - C01 walks
+    - C01 stops
+    - C01 turns toward P01
+    - C01 leans slightly forward
+  GAZE:
+    initial: forward
+    change: locks onto P01
+  PERFORMANCE:
+    face: restrained alertness
+    body: sudden stillness after movement
+  VOICE_SOUND:
+    ambience: low industrial machinery
+    action: metal footstep resonance
+    discovery: faint electrical hum from P01
+  MICRO:
+    - tiny eye adjustment
+    - thin reflection from P01 on cheek
+end_frame_lock:
+  character_position: center-right
+  gaze: P01
+  camera: medium close-up three-quarter rear
+  screen_direction: left_to_right
+editing_transition:
+  type: MATCH_CUT
+  to: S09

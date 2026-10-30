@@ -1,0 +1,43 @@
+# v6.5 Hook Router
+
+```yaml
+hooks:
+  visual_style:
+    target: GLOBAL
+    propagate: [SCENE, CAMERA, PERFORMANCE, MICRO]
+
+  scene_change:
+    target: SCENE
+    propagate: [BLOCKING, CAMERA, SOUND, MICRO]
+
+  camera_change:
+    target: CAMERA
+    propagate: [SHOT_COMPOSITION, END_FRAME]
+
+  move_character:
+    target: BLOCKING
+    propagate: [CAMERA, ACTION, GAZE, PERFORMANCE, SOUND]
+
+  change_action:
+    target: ACTION
+    propagate: [PERFORMANCE, SOUND, MICRO, END_FRAME]
+
+  change_gaze:
+    target: GAZE
+    propagate: [CAMERA, PERFORMANCE]
+
+  change_emotion:
+    target: PERFORMANCE
+    propagate: [VOICE_SOUND, MICRO]
+
+  change_voice:
+    target: VOICE_SOUND
+    propagate: [DIALOGUE_TIMING]
+
+  add_micro_detail:
+    target: MICRO
+    propagate: []
+```
+
+Principle:
+The smallest valid Hook should cause the smallest valid regeneration.

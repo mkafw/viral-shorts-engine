@@ -1,0 +1,57 @@
+shot_id: S04
+seedance_layers:
+  PHOTOGRAPHY:
+    style: realistic cinematic photography
+    lens: 35mm
+    aperture: f/2.0
+  OVERALL_EMOTION:
+    tone: restrained, quiet, uncertain
+  CHARACTER_STATE:
+    subject: female protagonist
+    state: calm with slight concern
+    behavior: slow, controlled movement
+  SCENE:
+    location: remote old lighthouse
+    time: dusk into night
+    environment: overcast sky, sea spray, rusted metal stairs
+  CAMERA_MOVE:
+    start: low aerial establishing position above shoreline
+    initial_subject: lighthouse and coastline
+    primary_subject: lighthouse, then protagonist
+    path: slow forward move, then transition to handheld follow
+    speed: slow and stable
+    final_composition: protagonist framed near lighthouse entrance
+  BLOCKING:
+    protagonist: enters through rusted iron door
+  ACTION:
+    - pushes door
+    - steps inside
+    - stops
+  GAZE:
+    changes from path ahead to an old photograph on wall
+  PERFORMANCE:
+    face: restrained concern
+    body: stillness after movement
+  CONSTRAINTS:
+    preserve realistic proportions
+    no game CG look
+    no extra people
+    physically plausible movement
+  SOUND:
+    source: rusted iron door
+    sound: metal friction
+    ambience: sea, wind, distant seabirds
+  SEGMENTED_NARRATIVE:
+    - 0-5s: establish coastline and lighthouse
+    - 5-10s: protagonist enters
+    - 10-15s: reaction to old photograph
+    - 15-20s: story clue
+  END_FRAME_LOCK:
+    character_position: two steps inside doorway
+    gaze: toward wall photograph
+    camera: medium close-up from three-quarter rear
+    lighting: same dusk practical mix
+editing_transition:
+  type: MATCH_CUT
+  from: S04
+  to: S05

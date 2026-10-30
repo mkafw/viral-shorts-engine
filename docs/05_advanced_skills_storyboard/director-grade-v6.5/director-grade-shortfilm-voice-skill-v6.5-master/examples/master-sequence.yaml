@@ -1,0 +1,67 @@
+story:
+  title: "发现绿色碎片"
+  unit: U01
+  beat: B03
+
+director_graph:
+  character: C01-0704
+  location: L01
+  prop: P01
+  behavior:
+    - walks through corridor
+    - stops after noticing green fragment
+    - turns head
+    - becomes still
+
+blocking:
+  C01-0704: frame_left_to_center
+  P01: floor_center_right
+
+camera:
+  start: three-quarter rear
+  primary_subject: C01-0704
+  path: slow forward tracking
+  attention_change: character -> green fragment
+  final_composition: medium close-up
+
+performance:
+  state: restrained anomaly detection
+  face: eyes narrow slightly
+  body: movement stops
+  robot_signal: cooling_fan_rpm rises slightly
+
+voice_sound:
+  ambience: low industrial hum
+  action: metal footstep resonance
+  prop: faint electrical resonance
+
+prompt_layers:
+  GLOBAL:
+    style: cinematic realistic industrial sci-fi
+    palette: cold gray with controlled green anomaly
+  SCENE:
+    location: abandoned processing corridor
+    atmosphere: dust and oil haze
+  CAMERA:
+    start: three-quarter rear
+    movement: slow forward tracking
+    attention: follows head turn to fragment
+  BLOCKING:
+    subject_path: left_to_center
+  ACTION:
+    sequence: walk -> stop -> turn -> hold
+  GAZE:
+    target: green fragment
+  PERFORMANCE:
+    state: restrained alertness
+  VOICE_SOUND:
+    ambience: industrial low frequency hum
+    event_sound: faint electrical resonance
+  MICRO:
+    - green reflection on cheek plating
+
+end_frame:
+  character: center
+  gaze: green fragment
+  camera: medium close-up
+  screen_direction: left_to_right

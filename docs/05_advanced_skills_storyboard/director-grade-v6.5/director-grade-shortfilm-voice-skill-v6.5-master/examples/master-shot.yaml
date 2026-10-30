@@ -1,0 +1,50 @@
+story: >
+  A worker enters an abandoned industrial room, notices a green fragment,
+  stops, and quietly says that it should not be here.
+
+shot:
+  id: K01
+  purpose: establish room and entrance
+  primary_subject: C01
+
+  source_tree:
+    blocking:
+      - C01 enters from frame left
+      - stops near center
+    action:
+      - walk
+      - stop
+    gaze:
+      initial: forward
+
+  prompt_layers:
+    GLOBAL:
+      style: realistic cinematic science-fiction
+      palette: cold industrial gray
+      character_lock: C01
+    SCENE:
+      location: abandoned industrial room
+      atmosphere: dust, oil haze, weak practical light
+    CAMERA:
+      start: three-quarter rear at chest height
+      target: C01
+      movement: slow observational tracking
+      final_composition: medium shot
+    BLOCKING:
+      C01: frame left to center
+    ACTION:
+      sequence: walk, stop
+    GAZE:
+      initial: forward
+    PERFORMANCE:
+      state: restrained alertness
+    VOICE_SOUND:
+      ambience: low machine hum
+      dialogue_delivery: quiet, controlled
+    MICRO:
+      - slight head adjustment
+
+  end_frame_lock:
+    C01_position: center
+    camera_side: rear_three_quarter
+    screen_direction: left_to_right

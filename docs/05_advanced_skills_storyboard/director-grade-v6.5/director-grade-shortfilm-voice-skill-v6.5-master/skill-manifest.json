@@ -1,0 +1,26 @@
+{
+  "name": "director-grade-shortfilm-master-skill",
+  "version": "6.5",
+  "features": [
+    "camera-first directing",
+    "nested prompt layering",
+    "hook routing",
+    "causal asset graph",
+    "performance and four-dimensional voice",
+    "continuity checking",
+    "Seedance tutorial-derived prompt mapping",
+    "complex camera movement decomposition",
+    "end-frame locking",
+    "inter-shot editing transitions",
+    "segmented narrative timing",
+    "dependency-free executable prompt compiler",
+    "shot validation",
+    "end-frame continuity state",
+    "Seedance-specific compilation mapping",
+    "unified director control tree",
+    "tutorial-to-node mapping",
+    "smallest-node hook editing",
+    "dependency propagation",
+    "storyboard/blocking/expression/voice integration"
+  ]
+}

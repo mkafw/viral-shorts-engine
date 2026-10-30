@@ -1,0 +1,30 @@
+version: "6.5"
+source_of_truth: DIRECTOR_GRAPH
+
+trees:
+  narrative: [STORY, UNIT, BEAT, SHOT]
+  director: [BEHAVIOR, BLOCKING, CAMERA, GAZE, PERFORMANCE, SOUND]
+  prompt: [GLOBAL, SCENE, CAMERA, BLOCKING, ACTION, GAZE, PERFORMANCE, VOICE_SOUND, MICRO]
+
+shot_required:
+  - primary_subject
+  - blocking
+  - camera
+  - action
+  - end_frame
+
+camera:
+  required_for_complex_move:
+    - start
+    - primary_subject
+    - path
+    - speed_profile
+    - final_composition
+
+continuity:
+  next_start_inherits_from: end_frame
+
+compile:
+  outer_to_inner: true
+  source_tree_before_prompt: true
+  preserve_locked_layers: true

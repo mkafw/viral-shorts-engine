@@ -1,0 +1,38 @@
+version: "6.5"
+source_of_truth:
+  - STORY
+  - ASSET_GRAPH
+  - BLOCKING
+  - CAMERA
+  - PERFORMANCE
+  - VOICE
+  - SOUND
+
+compilation:
+  - GLOBAL
+  - SCENE
+  - CAMERA
+  - BLOCKING
+  - ACTION
+  - GAZE
+  - PERFORMANCE
+  - VOICE_SOUND
+  - MICRO
+
+shot_chain:
+  required:
+    - PRIMARY_SUBJECT
+    - CAMERA_START
+    - ACTION
+    - END_FRAME_LOCK
+
+hooks:
+  /story: STORY
+  /assets: ASSET_GRAPH
+  /blocking: BLOCKING
+  /camera: CAMERA
+  /expression: PERFORMANCE
+  /voice: VOICE
+  /prompt: compilation
+  /continuity: shot_chain
+  /director: all

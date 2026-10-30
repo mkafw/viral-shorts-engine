@@ -1,0 +1,80 @@
+version: "6.2"
+name: prompt-layering
+order:
+  - GLOBAL
+  - SCENE
+  - CAMERA
+  - BLOCKING
+  - ACTION
+  - GAZE
+  - PERFORMANCE
+  - VOICE_SOUND
+  - MICRO
+
+layers:
+  GLOBAL:
+    stability: locked
+    scope: film_or_sequence
+  SCENE:
+    stability: inherited_or_local
+    scope: scene
+  CAMERA:
+    stability: local
+    scope: shot
+  BLOCKING:
+    stability: local
+    scope: shot
+  ACTION:
+    stability: local
+    scope: beat
+  GAZE:
+    stability: local
+    scope: beat
+  PERFORMANCE:
+    stability: local
+    scope: beat
+  VOICE_SOUND:
+    stability: local
+    scope: shot
+  MICRO:
+    stability: derived_or_local
+    scope: moment
+
+rules:
+  outer_to_inner: true
+  lower_layer_may_not_break_locked_parent: true
+  deduplicate_before_compile: true
+  preserve_asset_ids: true
+  preserve_screen_direction: true
+  propagate_hook_dependencies: true
+
+seedance_extension:
+  order:
+    - PHOTOGRAPHY
+    - OVERALL_EMOTION
+    - CHARACTER_STATE
+    - SCENE
+    - CAMERA_MOVE
+    - CONSTRAINTS
+    - SOUND
+    - SEGMENTED_NARRATIVE
+    - END_FRAME_LOCK
+    - EDITING_TRANSITION
+  camera_decomposition:
+    - CAMERA_START
+    - INITIAL_SUBJECT
+    - PRIMARY_SUBJECT
+    - CAMERA_PATH
+    - SPEED_PROFILE
+    - ATTENTION_CHANGE
+    - FINAL_COMPOSITION
+    - END_FRAME_LOCK
+  transitions:
+    - DOLLY_IN
+    - RACK_FOCUS
+    - L_CUT
+    - HARD_CUT
+    - J_CUT
+    - MATCH_CUT
+    - SMASH_CUT
+    - HIDDEN_CUT
